@@ -1,3 +1,18 @@
 body {
   color: blue;
+  height: 100%;
+  background-image: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__480.jpg");
+  background-size: cover;
+}
+
+.selectable {
+  position: relative;
+}
+
+.selectable:hover {
+  cursor: pointer;
+}
+
+.selectable::after {
+  opacity: 0.1;
 }
