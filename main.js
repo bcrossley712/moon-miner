@@ -1,1 +1,5 @@
-console.log("JS linked");
+let cheese = 0
+function mine() {
+  cheese++
+  console.log(cheese);
+}
