@@ -18,3 +18,13 @@ body {
 .selectable::after {
   opacity: 0.1;
 }
+
+.rounded-left {
+  border-top-left-radius: 5px;
+  background-color: rgb(255, 160, 51);
+}
+
+.rounded-right {
+  background-color: rgb(255, 160, 51);
+  border-top-right-radius: 5px;
+}

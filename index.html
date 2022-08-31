@@ -6,8 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'
-    integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <title>moon-miner</title>
 
   <style>
@@ -44,9 +45,49 @@
     </div>
   </main>
   <footer>
-    <div class="row">
+    <div class="row mb-4">
       <div class="col-12">
+        <div class="row">
+          <div class="col-1 offset-4 text-light  border-bottom border-light rounded-left">
+            <span>Click upgrade count</span>
+          </div>
+          <div class="col-2 bg-warning text-light  border-bottom border-light d-flex justify-content-between p-2">
+            <h1 class="text-start">🧀
+            </h1>
+            <h1 class="text-end" id="cheese-count">0</h1>
+          </div>
+          <div class="col-1 text-light  border-bottom border-light rounded-right">
+            <span>Auto upgrade count</span>
+          </div>
+        </div>
+        <div class="row p-2 bg-danger rounded mx-5">
+          <div class="col-6">
+            <div class="row p-1">
+              <div class="col-6 text-light bg-warning rounded-start flex-column">
+                <div>
 
+                  <button class="btn btn-primary">Knife</button>
+                </div>
+                <div>
+
+                  <button class="btn btn-primary">Drill</button>
+
+                </div>
+              </div>
+              <div class="col-6 text-light bg-warning rounded-end">
+
+
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="row p-1 h-100">
+              <div class="col-12 text-light bg-warning rounded">
+                Stats
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
