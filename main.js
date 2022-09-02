@@ -41,12 +41,16 @@ function runAutoUpgrade() {
 }
 function draw() {
   document.getElementById("cheese-count").innerText = cheese
+  document.getElementById("click-count").innerText = 1 + clickUpgrades.drill.quantity * clickUpgrades.drill.multiplier + clickUpgrades.knife.quantity * clickUpgrades.knife.multiplier
+  document.getElementById("auto-count").innerText = 0 + automaticUpgrades.mousetronaut.quantity * automaticUpgrades.mousetronaut.multiplier + automaticUpgrades.station.quantity * automaticUpgrades.station.multiplier
   for (let key in clickUpgrades) {
-    // document.getElementById(key + "-count").innerHTML = clickUpgrades[key].quantity
+    document.getElementById(key + "-quantity").innerText = clickUpgrades[key].quantity
+    document.getElementById(key + "-quantity-count").innerText = clickUpgrades[key].quantity * clickUpgrades[key].multiplier
     document.getElementById(key).innerText = clickUpgrades[key].price
   }
   for (let key in automaticUpgrades) {
-    // document.getElementById(key + "-count").innerHTML = automaticUpgrades[key].quantity
+    document.getElementById(key + "-quantity").innerText = automaticUpgrades[key].quantity
+    document.getElementById(key + "-quantity-count").innerText = automaticUpgrades[key].quantity * automaticUpgrades[key].multiplier
     document.getElementById(key).innerText = automaticUpgrades[key].price
   }
 
