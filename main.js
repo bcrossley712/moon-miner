@@ -57,10 +57,15 @@ function draw() {
 }
 function upgradeClick(key) {
   let upgrade = clickUpgrades[key]
-  cheese -= upgrade.price
-  upgrade.quantity++
-  upgrade.price += (Math.floor(upgrade.price - upgrade.price * .9))
-  console.log("Upgraded " + key);
+  if (cheese >= upgrade.price) {
+    cheese -= upgrade.price
+    upgrade.quantity++
+    upgrade.price += (Math.floor(upgrade.price - upgrade.price * .9))
+    console.log("Upgraded " + key);
+    purchasedAlert()
+  } else {
+    declinedPurchaseAlert()
+  }
   draw()
 }
 function upgradeAuto(key) {
@@ -70,6 +75,43 @@ function upgradeAuto(key) {
   upgrade.price += (Math.floor(upgrade.price - upgrade.price * .7))
   console.log("Upgraded " + key);
   draw()
+}
+function purchasedAlert() {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+
+  Toast.fire({
+    icon: 'success',
+    title: 'Purchased Upgrade'
+  })
+}
+
+function declinedPurchaseAlert() {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+
+  Toast.fire({
+    icon: 'error',
+    title: 'Not enough cheddar!'
+  })
 }
 
 setInterval(runAutoUpgrade, 2000)
